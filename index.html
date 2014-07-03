@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Audience Segmentation">
+    <meta name="author" content="goGEO.io">
+
+    <title>Audience Segmentation</title>
+
+    <link rel="stylesheet" href="assets/stylesheet/leaflet/leaflet.css" />
+    <link rel="stylesheet" href="assets/stylesheet/audience-segmentation.css" />
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/stylesheet/bootstrap-slider.min.css" />
+    <link rel="stylesheet" href="assets/stylesheet/audience-segmentation.css" />
+  </head>
+  <body>
+    <div id="map" style="width: auto; height: 960px"></div>
+    
+    <script type="text/x-handlebars" data-template-name="slider">
+      <input type="text" class="span2" value=""/>
+    </script>
+
+    <!-- <div id="segmentation-div" class="well"> -->
+    <script type="text/x-handlebars" data-template-name="panel">
+      <div class="panel-group" id="accordion">
+        {{#each itemController="audience"}}
+          {{#view App.AudienceView}}
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" {{bind-attr href=collapseRef}}>
+                    {{title}}
+                  </a>
+                </h4>
+              </div>
+              <div {{bind-attr id=collapseId}} class="panel-collapse collapse in">
+                <div class="panel-body">
+                  <input type="checkbox" name="vehicle" value="Bike">I have a bike
+                  <input type="checkbox" name="vehicle" value="Car">I have a car
+                  </br>
+                  <input type="text" class="span2" value=""/>
+                  </br>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <strong>Min:</strong> <span class="slider-min-val"></span>
+                    </div>
+                    <div class="col-md-6">
+                      <strong>Max:</strong> <span class="slider-max-val"></span>
+                    </div>
+                  </div>
+                  </br>
+                  </br>
+                  <button type="button" class="btn btn-primary btn-sm pull-right">Aplicar</button>
+                </div>
+              </div>
+            </div>
+          {{/view}}
+        {{/each}}
+      </div>
+    </script>
+    <!-- </div> -->
+
+    <script src="assets/javascript/libs/jquery-1.11.1.min.js"></script>
+    <script src="assets/javascript/libs/leaflet/leaflet.js"></script>
+    <script src="http://maps.google.com/maps/api/js?v=3.2&sensor=false"></script>
+    <script type="text/javascript" src="assets/javascript/libs/leaflet-plugins/layer/tile/Google.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="assets/javascript/libs/bootstrap-slider.min.js"></script>
+    <script src="assets/javascript/libs/ember/handlebars-1.1.2.js"></script>
+    <script src="assets/javascript/libs/ember/ember-1.5.1.js"></script>
+    <script src="assets/javascript/libs/ember/ember-data.js"></script>
+
+    <!-- <script src="assets/javascript/audience-segmentation.js"></script> -->
+    <script src="assets/javascript/application.js"></script>
+    <script src="assets/javascript/router.js"></script>
+    <script src="assets/javascript/initializers/map.js"></script>
+    <script src="assets/javascript/models/panel.js"></script>
+    <script src="assets/javascript/controllers/panel_controller.js"></script>
+    <script src="assets/javascript/controllers/audience_controller.js"></script>
+    <script src="assets/javascript/controllers/slider_controller.js"></script>
+    <script src="assets/javascript/views/slider_view.js"></script>
+    <script src="assets/javascript/views/audience_view.js"></script>
+
+  </body>
+</html>

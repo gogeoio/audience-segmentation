@@ -1,0 +1,1 @@
+App.PanelController = Ember.ArrayController.extend({});

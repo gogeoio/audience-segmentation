@@ -1,0 +1,11 @@
+#accordion {
+  width: 335px;
+  /*height: 560px;*/
+  position: absolute;
+  z-index: 1001;
+  right: 3px;
+  top: 3px;
+  background: white;
+  border-radius: 10px;
+  opacity: 0.85;
+}
