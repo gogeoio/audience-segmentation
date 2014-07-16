@@ -22,9 +22,8 @@
       <input type="text" class="span2" value=""/>
     </script>
 
-    <!-- <div id="segmentation-div" class="well"> -->
     <script type="text/x-handlebars" data-template-name="panel">
-      <div class="panel-group" id="accordion">
+      <!-- <div class="panel-group" id="accordion"> -->
         {{#each itemController="audience"}}
           {{#view App.AudienceView}}
             <div class="panel panel-default">
@@ -35,8 +34,12 @@
                   </a>
                 </h4>
               </div>
-              <div {{bind-attr id=collapseId}} class="panel-collapse collapse in">
+              <div {{bind-attr id=collapseId }} class="panel-collapse collapse">
                 <div class="panel-body">
+                  {{#if options}}
+                    {{checkboxlist options}}
+                  {{/if}}
+                  </br>
                   <input type="text" class="span2" value=""/>
                   </br>
                   <div class="row">
@@ -55,19 +58,31 @@
             </div>
           {{/view}}
         {{/each}}
-      </div>
+      <!-- </div> -->
     </script>
-    <!-- </div> -->
+
+    <div id="legend-div" style="display: none;">
+      <div id="legend">
+        <div class="legend-title">
+          <span id="legend-title"></span>
+        </div>
+        <div class="legend-scale">
+          <ul id="legend-labels" class='legend-labels'>
+          </ul>
+        </div>
+      </div>
+    </div>
 
     <script src="assets/javascript/libs/jquery-1.11.1.min.js"></script>
     <script src="assets/javascript/libs/leaflet/leaflet.js"></script>
     <script src="http://maps.google.com/maps/api/js?v=3.2&sensor=false"></script>
     <script type="text/javascript" src="assets/javascript/libs/leaflet-plugins/layer/tile/Google.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script src="assets/javascript/libs/bootstrap-slider.min.js"></script>
     <script src="assets/javascript/libs/ember/handlebars-1.1.2.js"></script>
     <script src="assets/javascript/libs/ember/ember-1.5.1.js"></script>
     <script src="assets/javascript/libs/ember/ember-data.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="assets/javascript/libs/bootstrap-slider.min.js"></script>
+    <script src="assets/javascript/libs/sjcl.js"></script>
 
     <!-- <script src="assets/javascript/audience-segmentation.js"></script> -->
     <script src="assets/javascript/application.js"></script>
@@ -77,8 +92,11 @@
     <script src="assets/javascript/controllers/panel_controller.js"></script>
     <script src="assets/javascript/controllers/audience_controller.js"></script>
     <script src="assets/javascript/controllers/slider_controller.js"></script>
+    <script src="assets/javascript/controllers/gogeo_controller.js"></script>
     <script src="assets/javascript/views/slider_view.js"></script>
     <script src="assets/javascript/views/audience_view.js"></script>
+    <script src="assets/javascript/views/panel_view.js"></script>
+    <script src="assets/javascript/helpers/view_helpers.js"></script>
 
   </body>
 </html>

@@ -9,3 +9,61 @@
   border-radius: 10px;
   opacity: 0.85;
 }
+
+#legend-div {
+  background-color: white;
+  opacity: 0.9;
+  position: absolute;
+  z-index: 1000;
+  right: 50px;
+  bottom: 75px;
+  width: 150px;
+  height: 200px;
+}
+
+#legend {
+  margin: 10px;
+}
+
+#legend .legend-title {
+  text-align: left;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 90%;
+}
+
+#legend .legend-scale ul {
+  margin: 0;
+  margin-bottom: 5px;
+  padding: 0;
+  float: left;
+  list-style: none;
+}
+
+#legend .legend-scale ul li {
+  font-size: 80%;
+  list-style: none;
+  margin-left: 0;
+  line-height: 18px;
+  margin-bottom: 2px;
+}
+
+#legend ul.legend-labels li span {
+  display: block;
+  float: left;
+  height: 16px;
+  width: 30px;
+  margin-right: 5px;
+  margin-left: 0;
+  border: 1px solid #999;
+}
+
+#legend .legend-source {
+  font-size: 70%;
+  color: #999;
+  clear: both;
+}
+
+#legend a {
+  color: #777;
+}
