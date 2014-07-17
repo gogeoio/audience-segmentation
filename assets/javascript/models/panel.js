@@ -18,7 +18,7 @@ App.Panel.FIXTURES = [
  {
    id: 2,
    title: 'Ethnicities',
-   attribute: 'ethnicities',
+   attribute: 'population',
    min: 0,
    max: 4936599,
    options: ["white", "black", "hawaiian", "asian", "indian", "other race"]

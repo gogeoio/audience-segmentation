@@ -13,7 +13,8 @@ App.initializer({
       maxZoom: 14
     };
 
-    map = L.map('map', options).setView([54.367759, -105.695343], 4);
+    map = L.map('map', options).setView([39.690280594818034, -95.5810546875], 4);
+    // lat: 39.690280594818034, lng: -95.5810546875
 
     App.group = new L.LayerGroup().addTo(map);
 

@@ -42,7 +42,7 @@ App.AudienceController = Ember.ObjectController.extend({
       var height = heights[intervals - 3];
       $('#legend-div').css('height', height + 'px');
 
-      var legendTitle = 'Quantidade de pessoas';
+      var legendTitle = 'Number of People';
       $('#legend-title').text(legendTitle);
 
       var div_width = 0;
@@ -145,7 +145,8 @@ App.AudienceController = Ember.ObjectController.extend({
         },
         error: function(error) {
           // Log any error.
-          console.log('Error', error);
+          // console.log('Error', error);
+          $('#query-alert').modal('toggle');
         },
         cache: false
       });

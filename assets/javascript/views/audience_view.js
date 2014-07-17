@@ -42,14 +42,19 @@ App.AudienceView = Ember.View.extend({
       });
     }
     else {
-      sliderMinValue.text(min);
-      sliderMaxValue.text(max);
+      var minFormated = numeral(min).format('0,0'),
+          maxFormated = numeral(max).format('0,0');
+      sliderMinValue.text(minFormated);
+      sliderMaxValue.text(maxFormated);
 
       this.$().find('.span2').bind('slide', function (slideEvt) {
         var minSlider = slideEvt.value[0],
             maxSlider = slideEvt.value[1];
-        sliderMinValue.text(minSlider);
-        sliderMaxValue.text(maxSlider);
+        var minSliderFormated = numeral(minSlider).format('0,0'),
+            maxSliderFormated = numeral(maxSlider).format('0,0');
+        
+        sliderMinValue.text(minSliderFormated);
+        sliderMaxValue.text(maxSliderFormated);
         controller.set('min', minSlider);
         controller.set('max', maxSlider);
       });
