@@ -4,11 +4,11 @@ App.AudienceController = Ember.ObjectController.extend({
   actions: {
     updateLayer: function(string, stylename, query, geojson) {
       console.log(query);
-      var url = ["http://localhost:9090", "map", "db01", "county05", "{z}", "{x}", "{y}", "tile.png"].join("/");
-      // var url = ["http://{s}.gogeo.io", "map", "db01", "tiger01", "{z}", "{x}", "{y}", "tile.png"].join("/");
+      // var url = ["http://localhost:9090", "map", "db01", "county05", "{z}", "{x}", "{y}", "tile.png"].join("/");
+      var url = ["http://{s}.gogeo.io", "map", "db01", "county01", "{z}", "{x}", "{y}", "tile.png"].join("/");
 
-      url += "?mapkey=a8b87a5e-7fc5-467e-ab8f-8626ef54224d";
-      // url += "?mapkey=a6a9e433-da44-421d-aaf1-fd95cd417f62";
+      // url += "?mapkey=a8b87a5e-7fc5-467e-ab8f-8626ef54224d";
+      url += "?mapkey=a6a9e433-da44-421d-aaf1-fd95cd417f62";
 
       if (stylename) {
         url = url.replace('&amp;', '&') + '&stylename=' + stylename;
@@ -76,19 +76,19 @@ App.AudienceController = Ember.ObjectController.extend({
           intervals = 5,
           thematicName = 'thematic_map_demo_' + data.attribute;
       
-      var service_addr = "http://localhost:9090",
-      // var service_addr = "http://maps.gogeo.io",
+      // var service_addr = "http://localhost:9090",
+      var service_addr = "http://maps.gogeo.io",
           databaseName = "db01",
-          collectionName = "county05";
-          // collectionName = "tiger01";
+          // collectionName = "county05";
+          collectionName = "county01";
       
       var thisController = this;
 
       var url = [service_addr, 'thematic', databaseName, collectionName];
       url = url.join('/');
 
-      url += "?mapkey=a8b87a5e-7fc5-467e-ab8f-8626ef54224d";
-      // url += "?mapkey=a6a9e433-da44-421d-aaf1-fd95cd417f62";
+      // url += "?mapkey=a8b87a5e-7fc5-467e-ab8f-8626ef54224d";
+      url += "?mapkey=a6a9e433-da44-421d-aaf1-fd95cd417f62";
 
       var query = '{"query": ';
       
